@@ -5,6 +5,10 @@ from sklearn.model_selection import RandomizedSearchCV
 from sklearn.svm import SVC      
 
 from ray.util.joblib import register_ray
+# If Running on a Ray cluster, run the following code first.
+# import ray
+# ray.init(address='auto')
+
 register_ray()
 param_space = {
     'C': np.logspace(-6, 6, 30),
